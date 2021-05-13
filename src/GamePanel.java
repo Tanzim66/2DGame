@@ -59,19 +59,29 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Rectangle down = new Rectangle(x+3, y+20, 15, 2);
 
 	 //Main menu gif:
-	 Image image = Toolkit.getDefaultToolkit().createImage("ezgif.com-resize (1).gif");
+	 //Image image = Toolkit.getDefaultToolkit().createImage(".//res//ezgif.com-resize (1).gif");
+	 Image image = Toolkit.getDefaultToolkit().createImage(getClass().getClassLoader().getResource("ezgif.com-resize (1).gif"));
 	 
-	 ImageIcon wallImage = new ImageIcon("block1.png");
+	 //ImageIcon wallImage = new ImageIcon(".//res//block1.png");
+	 ImageIcon wallImage = new ImageIcon(getClass().getClassLoader().getResource("block1.png"));
 	 
-	 ImageIcon playImage= new ImageIcon("play.png");
-	 ImageIcon pauseImage= new ImageIcon("pause.png");
-	 ImageIcon PCImage= new ImageIcon("PC.png");
-	 ImageIcon gameOver= new ImageIcon("gameover.jpg");
+	 //ImageIcon playImage= new ImageIcon(".//res//play.png");
+	 ImageIcon playImage= new ImageIcon(getClass().getClassLoader().getResource("play.png"));
+	 //ImageIcon pauseImage= new ImageIcon(".//res//pause.png");
+	 ImageIcon pauseImage= new ImageIcon(getClass().getClassLoader().getResource("pause.png"));
+	 //ImageIcon PCImage= new ImageIcon(".//res//PC.png");
+	 ImageIcon PCImage= new ImageIcon(getClass().getClassLoader().getResource("PC.png"));
+	 //ImageIcon gameOver= new ImageIcon(".//res//gameover.jpg");
+	 ImageIcon gameOver= new ImageIcon(getClass().getClassLoader().getResource("gameover.jpg"));
 	 
-	 ImageIcon PRight= new ImageIcon("right.png");
-	 ImageIcon PLeft= new ImageIcon("left.png");
-	 ImageIcon PUp= new ImageIcon("up.png");
-	 ImageIcon PDown= new ImageIcon("down.png");
+	 //ImageIcon PRight= new ImageIcon(".//res//right.png");
+	 ImageIcon PRight= new ImageIcon(getClass().getClassLoader().getResource("right.png"));
+	 //ImageIcon PLeft= new ImageIcon(".//res//left.png");
+	 ImageIcon PLeft= new ImageIcon(getClass().getClassLoader().getResource("left.png"));
+	 //ImageIcon PUp= new ImageIcon(".//res//up.png");
+	 ImageIcon PUp= new ImageIcon(getClass().getClassLoader().getResource("up.png"));
+	 //ImageIcon PDown= new ImageIcon(".//res//down.png");
+	 ImageIcon PDown= new ImageIcon(getClass().getClassLoader().getResource("down.png"));
 	 
 	 //Buttons:
 	 JButton playButton = new JButton("PLAY");
@@ -128,9 +138,6 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
 	        cards=new CardLayout();
 			this.setLayout(cards);
 			
-			Music m = new Music();
-			m.musicPlay();
-			
 			playButton.setFont(new Font("Arial Black", Font.BOLD, 15));
 	        
 			//The main Menu:
@@ -164,7 +171,6 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
 	           public void paintComponent(Graphics gr){
 			      	super.paintComponent(gr);
 			      	setBackground(new Color(0,0,0));
-			      	m.musicStop();
 			      	for (int i=0; i<mapArray.length; i++){
 						 for (int k=0; k<mapArray[0].length; k++){
 							 if (mapArray [i][k] == 2)
